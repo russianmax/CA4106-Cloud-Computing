@@ -14,7 +14,9 @@ https://cloud.google.com/appengine/docs/python - App Engine documentation
 https://www.youtube.com/watch?v=w01H2CXp_7Y - Using Google Cloud SQL with App Engine
 
 27/03/2020
-We came back couple of days later and decided that we are going to make a Django e-commerce app that allow users to put up items for sale. We will then host this application using Google App Engine and Google Cloud SQL.
+
+We came back couple of days later and decided that we are going to make a Django e-commerce app that allow users to put up items for sale. 
+We will then host this application using Google App Engine and Google Cloud SQL.
 
 Some other useful resources that we gathered are:
 https://www.youtube.com/watch?v=YZvRrldjf1Y - How to Build an E-commerce Website with Django and Python
