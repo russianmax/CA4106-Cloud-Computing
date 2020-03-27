@@ -13,3 +13,11 @@ https://cloud.google.com/sql - Cloud SQL documentation
 https://cloud.google.com/appengine/docs/python - App Engine documentation
 https://www.youtube.com/watch?v=w01H2CXp_7Y - Using Google Cloud SQL with App Engine
 
+27/03/2020
+We came back couple of days later and decided that we are going to make a Django e-commerce app that allow users to put up items for sale. We will then host this application using Google App Engine and Google Cloud SQL.
+
+Some other useful resources that we gathered are:
+https://www.youtube.com/watch?v=YZvRrldjf1Y - How to Build an E-commerce Website with Django and Python
+https://medium.com/@BennettGarner/deploying-a-django-application-to-google-app-engine-f9c91a30bd35 - How to deploy Django app to GAE
+https://stackshare.io/stackups/google-cloud-sql-vs-sqlite - Difference between Cloud SQL and SQLite (default django DB)
+
