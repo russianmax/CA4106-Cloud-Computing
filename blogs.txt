@@ -1,0 +1,15 @@
+25/03/2020
+
+Today we started working on Cloud Computing assignment. We started a call on Google Hangouts, as college has been till
+the end of the semester. All of researched different resources on how to 'Create and connect web front end to a Cloud
+SQL database'. The first thing we also did was create a Google Cloud Platform account.
+
+Once we created account I started screensharing and we want through GCP together. Maksims has had previous experience
+using GCP during his INTRA, especially Google App Engine services.
+
+Resources that found useful are:
+https://cloud.google.com/sql/docs/mysql/connect-app-engine - Tutorial provided
+https://cloud.google.com/sql - Cloud SQL documentation
+https://cloud.google.com/appengine/docs/python - App Engine documentation
+https://www.youtube.com/watch?v=w01H2CXp_7Y - Using Google Cloud SQL with App Engine
+
