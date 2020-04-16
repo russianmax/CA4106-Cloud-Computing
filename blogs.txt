@@ -23,3 +23,30 @@ https://www.youtube.com/watch?v=YZvRrldjf1Y - How to Build an E-commerce Website
 https://medium.com/@BennettGarner/deploying-a-django-application-to-google-app-engine-f9c91a30bd35 - How to deploy Django app to GAE
 https://stackshare.io/stackups/google-cloud-sql-vs-sqlite - Difference between Cloud SQL and SQLite (default django DB)
 
+
+06/04
+We decided that Matthew and Maksims will mainly focus on the development of the app (Django). Josh will focus on connecting
+the app to Cloud SQl and Michael will look at the deployment side of things. Tutorial that we are going to follow to develop our
+application can be found here:
+https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p - Django tutorial
+
+In order to deploy and connect our application to Google App Engine and Cloud SQL, the app will have to be developed first.
+We will try write this app in the next couple of days. This will give Michael and Josh time to research and figure out how to deploy
+using App Engine and how to connect Django to Cloud SQL.
+
+As Django uses SQLite3 be default, we will need to change from SQLite 3 to PostgreSQL or MySQL for this to work.
+
+Michael done some research and found some really good tutorial on how to Connect to Cloud SQL from App Engine in Google Cloud.
+It is a really good tutorial, it shows what we need to do but uses Flask and MySQL instead.
+
+08/04
+Maksims have wrote basic functionality of the app. The app at the moment allows users to create profile and sign in. This
+was achieved by creating a Profile model and using in built Django auth_users functionality. This functionality will allow users
+of our site to authenticate easily. Next Matthew will write a Model that will create a new table in the database. This table will
+contain any items that are put up for sale on our site. Once the model is created it will allows us to query the database
+and display the items on the homepage.
+
+We will also need to create a form, that will allow us to gather information about the items that they want to sell, such as the photo, name,
+price and contact number. A simple view then will need to be written to display these items in the homepage.
+
+
