@@ -14,7 +14,6 @@ https://cloud.google.com/appengine/docs/python - App Engine documentation
 https://www.youtube.com/watch?v=w01H2CXp_7Y - Using Google Cloud SQL with App Engine
 
 27/03/2020
-
 We came back couple of days later and decided that we are going to make a Django e-commerce app that allow users to put up items for sale. 
 We will then host this application using Google App Engine and Google Cloud SQL.
 
@@ -23,8 +22,13 @@ https://www.youtube.com/watch?v=YZvRrldjf1Y - How to Build an E-commerce Website
 https://medium.com/@BennettGarner/deploying-a-django-application-to-google-app-engine-f9c91a30bd35 - How to deploy Django app to GAE
 https://stackshare.io/stackups/google-cloud-sql-vs-sqlite - Difference between Cloud SQL and SQLite (default django DB)
 
+29/03/2020
+Josh created test and prod directories. Test will be mainly used for development/testing and then code will be transfered to
+prod once we are happy with how the app works.
 
-06/04
+We also decided that we will call our web-app Prestige Worldwide - market place for your needs
+
+06/04/2020
 We decided that Matthew and Maksims will mainly focus on the development of the app (Django). Josh will focus on connecting
 the app to Cloud SQl and Michael will look at the deployment side of things. Tutorial that we are going to follow to develop our
 application can be found here:
@@ -39,7 +43,7 @@ As Django uses SQLite3 be default, we will need to change from SQLite 3 to Postg
 Michael done some research and found some really good tutorial on how to Connect to Cloud SQL from App Engine in Google Cloud.
 It is a really good tutorial, it shows what we need to do but uses Flask and MySQL instead.
 
-08/04
+08/04/2020
 Maksims have wrote basic functionality of the app. The app at the moment allows users to create profile and sign in. This
 was achieved by creating a Profile model and using in built Django auth_users functionality. This functionality will allow users
 of our site to authenticate easily. Next Matthew will write a Model that will create a new table in the database. This table will
