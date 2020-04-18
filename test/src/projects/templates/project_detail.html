@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="card">
+  <div class="card mb-2">
+    <div class="text-center">  
+      <h1>{{ project.itemTitle }}</h1>
+      </div>
+<body>
+
+
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+  </ul>
+  
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{{project.image.url}}" alt="{{project.itemTitle}}" width="1100" height="500">
+    </div>
+  </div>
+  
+
+
+<div class="card bg-secondary text-white">
+    <div class="card-body">
+  <h5>Item Description:</h5>
+  <p>{{ project.description }}</p>
+  <br>
+  <h5>Price :</h5>
+  <p> {{ project.price}}</p>
+  <br>
+  <h5>Sellers Location:</h5>
+  <p>{{project.county}}</p>
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Reveal Number</button>
+    <div id="demo" class="collapse">
+      {{project.phoneNumber}}
+    </div> 
+  </div>
+</div>
+
+</div>
+</body>
+{% endblock content%}

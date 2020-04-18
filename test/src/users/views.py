@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
-
+from projects.models import Listing_Database
 
 def register(request):
     if request.method == 'POST':
@@ -36,4 +36,11 @@ def profile(request):
     }
     return render(request, 'users/profile.html', context)
 
-
+@login_required
+def portal(request):
+    user = request.user
+    portal = Listing_Database.objects.filter(user=user)
+    context = {
+        'portal': portal
+    }
+    return render(request, 'users/portal.html', context)
