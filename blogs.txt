@@ -53,4 +53,6 @@ and display the items on the homepage.
 We will also need to create a form, that will allow us to gather information about the items that they want to sell, such as the photo, name,
 price and contact number. A simple view then will need to be written to display these items in the homepage.
 
+a
+
 
