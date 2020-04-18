@@ -53,6 +53,11 @@ and display the items on the homepage.
 We will also need to create a form, that will allow us to gather information about the items that they want to sell, such as the photo, name,
 price and contact number. A simple view then will need to be written to display these items in the homepage.
 
-a
+18/04/2020
+Over the last couple of days Matthew has been working on the rest of web app component of the project. He wrote a new model
+that created a new table in the database called Listing_Database. He then created a Create a Listing page, that allows users to
+put their desired item into the database. Another simple view was then created called project_index that displayed all of the
+available items on the homepage.
+
 
 
