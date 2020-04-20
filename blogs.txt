@@ -59,5 +59,16 @@ that created a new table in the database called Listing_Database. He then create
 put their desired item into the database. Another simple view was then created called project_index that displayed all of the
 available items on the homepage.
 
+20/04/2020
+Upon doing some research in how to deploy our app to App Engine and connect to Cloud SQL. We realised that writing image
+files to App Engine is not allowed. We have to use some sort of cloud storage system for the images. We decided to use Amazon S3
+Cloud Storage Services to achieve this. In order to use Amazon S3 with our Django app we have to also install two new libraries
+- django-storages and boto3.
+
+The tutorial that we followed can be found here:
+https://www.youtube.com/watch?v=inQyZ7zFMHM&t=26s - File Storage with AWS S3 Buckets Upload | Django (3.0) Crash Course Tutorials (pt 22)
+
+
+
 
 

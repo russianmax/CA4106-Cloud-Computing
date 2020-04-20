@@ -1,5 +1,6 @@
 Django==2.2
 django-crispy-forms==1.8.1
 Pillow==7.0.0
-django-storages==1.91
+django-storages==1.9.1
 boto3==1.12.42
+
