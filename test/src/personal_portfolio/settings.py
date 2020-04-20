@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -69,6 +70,9 @@ TEMPLATES = [
         },
     },
 ]
+
+
+
 
 WSGI_APPLICATION = 'personal_portfolio.wsgi.application'
 
@@ -130,32 +134,34 @@ STATICFILES_DIRS = [
      os.path.join(BASE_DIR, 'static')
  ]
 
-
-
-
-###########################
-# STATIC_URL = '/static/'
-#
-# MEDIA_URL = '/images/'
-#
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static')
-# ]
-#
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
-#########################
-
-
-
-
-
-
-
-
-
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Redirects to Home page after successful login 
 LOGIN_REDIRECT_URL = 'project_index'
 #Takes you to login page if you try to access a page that requires a user to be sign in
 LOGIN_URL = 'login'
+
+#S3 BUCKETS CONFIG
+
+
+AWS_ACCESS_KEY_ID = 'AKIA4KGRGCJCP4HXZ6VF'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'prestige-worldwide-bucket'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
+
+'''
+<?xml version="1.0" encoding="UTF-8"?>
+<CORSConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+<CORSRule>
+    <AllowedOrigin>*</AllowedOrigin>
+    <AllowedMethod>GET</AllowedMethod>
+    <AllowedMethod>POST</AllowedMethod>
+    <AllowedMethod>PUT</AllowedMethod>
+    <AllowedHeader>*</AllowedHeader>
+</CORSRule>
+</CORSConfiguration>
+'''
