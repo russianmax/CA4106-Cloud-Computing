@@ -7,5 +7,5 @@ from django.contrib.auth.models import User
 class CreatingListingForm(forms.ModelForm):
     class Meta:
         model = Listing_Database
-        fields = ['itemTitle', 'phoneNumber','description','price','county','image']
+        fields = ['item_title','item_category','description','price','county','phone_number' ,'image']
         

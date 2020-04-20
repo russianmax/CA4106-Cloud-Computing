@@ -3,11 +3,15 @@ from projects.models import Listing_Database
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import CreatingListingForm
+from .filters import ItemFilter
 
 def project_index(request):
     projects = Listing_Database.objects.all()
+
+    myFilter = ItemFilter(request.GET, queryset=projects)
+    projects = myFilter.qs
     context = {
-        'projects': projects
+        'projects': projects, 'myFilter': myFilter,
     }
     return render(request, 'project_index.html', context)
 
