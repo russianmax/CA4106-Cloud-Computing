@@ -121,11 +121,37 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/images/'
 # Full path to dorectory where django stores media file
 # Stored on FileSystem and not DB for performance reasons
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 # Ho we access media through the web browser
-MEDIA_URL = '/media/'
+STATICFILES_DIRS = [
+     os.path.join(BASE_DIR, 'static')
+ ]
+
+
+
+
+###########################
+# STATIC_URL = '/static/'
+#
+# MEDIA_URL = '/images/'
+#
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static')
+# ]
+#
+# MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+#########################
+
+
+
+
+
+
+
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

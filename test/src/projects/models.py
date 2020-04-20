@@ -14,7 +14,7 @@ class Listing_Database(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     county = models.CharField(max_length=30)
-    image = models.ImageField(upload_to='house_preview/')
+    image = models.ImageField(upload_to='listing_pics/')
 
 
     def __str__(self):
