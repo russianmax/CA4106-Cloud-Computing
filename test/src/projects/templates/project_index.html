@@ -6,6 +6,13 @@
 <br>
 <h1>Welcome to Prestige Wordwide</h1>
 <p>A free online marketplace</p>
+ <div class="container bg-dark " style="width: 25%; padding:3px" >
+     <form method ="get">
+         {{ myFilter.form }}
+         <button class="border border-dark" type="submit"<>
+         Search</button>
+     </form>
+    </div>
 
 <h3>Active Listings:</h3>
    
@@ -17,8 +24,11 @@
                 <div class="card mb-2">
                     <img class="card-img-top" src="{{project.image.url}}" style="width: 270px; height: 200px;">
                         <div class="card-body">
-                            <h5 class="card-title">{{ project.itemTitle }}</h5>
+                            <br>
+                            <br>
+                            <h5 class="card-title">{{ project.item_title }}</h5>
                             <p class="card-text">{{ project.description }}</p>
+                            <p class="card-text">€{{ project.price }}</p>
                             <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">View advert</a>
                         </div>
                 </div>
