@@ -6,17 +6,20 @@
 <br>
 <br>
 <div class="content-section">
-        <div class="media">
-        <img class="rounded-circle account-img" src="{{user.profile.image.url}}">
+        <div class="media bg-secondary text-white" style="padding:15px">
+        <img class="rounded-circle account-img border border-dark" src="{{user.profile.image.url}}"
+        height="100" width="100" style=>
            <br>
             <br>
-            <div class="media-body">
+            <div class="media-body" style="padding:20px">
                 <h2 class="account-heading">{{user.username}}</h2>
-                <p class="text-secondary">{{user.email}}</p>
-                <button class="btn btn-outline-info" onclick="window.location.href = '/profile'" >Update Profile</button>
+                <p class="text-white">{{user.email}}</p>
+                <button class="btn btn-outline-info bg-white" onclick="window.location.href = '/profile'" >Update Profile</button>
             </div>
         </div>
     </div>
+    <br>
+    {% if portal %}
 <h3>Your active listings:</h3>
 <div class="card bg-secondary "> 
     <div class="card-body">
@@ -32,8 +35,11 @@
                         </div>
                     </div>
                 </div>
-            
             {% endfor %}
+            {% else %}
+            <br>
+            <h3>You have no active listings</h3>
+            {% endif %}
         </div>
 </div>
 {% endblock content%}

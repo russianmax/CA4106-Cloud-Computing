@@ -5,12 +5,12 @@
 <br>
 <br>
     <div class="content-section">
-        <div class="content-section">
+        <div class="content-section bg-secondary text-white" style="padding:15px" >
             <div class="media">
-            <img class="rounded-circle account-img" src="{{request.user.profile.image.url}}">
-                <div class="media-body">
+            <img class="rounded-circle account-img border border-dark" src="{{request.user.profile.image.url}}" width="100" height="100">
+                <div class="media-body" style="padding:15px">
                     <h2 class="account-heading">{{user.username}}</h2>
-                    <p class="text-secondary">{{user.email}}</p>
+                    <p class="text-white">{{user.email}}</p>
                 </div>
             </div>
             

@@ -6,22 +6,23 @@
 <br>
 <h1>Welcome to Prestige Wordwide</h1>
 <p>A free online marketplace</p>
- <div class="container bg-dark " style="width: 25%; padding:3px" >
+
+ <div class="container bg-dark text-white" style="width: 100%; padding:3px" >
      <form method ="get">
          {{ myFilter.form }}
-         <button class="border border-dark" type="submit"<>
+         <button class="border border-dark" type="submit" <>
          Search</button>
      </form>
     </div>
-
+<br>
+    {% if projects %}
 <h3>Active Listings:</h3>
-   
 <div class="card bg-secondary">
     <div class="card-body">
         <div class="row">
         {% for project in projects %}
             <div class="col-md-4">
-                <div class="card mb-2">
+                <div class="card mb-2 border border-dark" style="width:280px;height:480px">
                     <img class="card-img-top" src="{{project.image.url}}" style="width: 270px; height: 200px;">
                         <div class="card-body">
                             <br>
@@ -34,6 +35,11 @@
                 </div>
             </div>
         {% endfor %}
+        {% else %}
+        <br>
+        <h3>No active listings found</h3>
+        {% endif %}
+
     </div>
 </div>
 {% endblock content%}
