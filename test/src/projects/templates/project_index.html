@@ -1,13 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<br>
-<br>
-<br>
+
 <h1>Welcome to Prestige Wordwide</h1>
 <p>A free online marketplace</p>
 
- <div class="container bg-dark text-white" style="width: 100%; padding:3px" >
+ <div class="container bg-dark text-white" style="width: 77%; padding:3px" >
      <form method ="get">
          {{ myFilter.form }}
          <button class="border border-dark" type="submit" <>
@@ -22,16 +20,15 @@
         <div class="row">
         {% for project in projects %}
             <div class="col-md-4">
-                <div class="card mb-2 border border-dark" style="width:280px;height:480px">
-                    <img class="card-img-top" src="{{project.image.url}}" style="width: 270px; height: 200px;">
+                <div class="card mb-2 border border-dark">
+                    <img class="card-img-top" src="{{project.image.url}}" style="max-width:100%; height:200px; margin:auto">
                         <div class="card-body">
-                            <br>
-                            <br>
                             <h5 class="card-title">{{ project.item_title }}</h5>
                             <p class="card-text">{{ project.description }}</p>
                             <p class="card-text">€{{ project.price }}</p>
                             <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">View advert</a>
                         </div>
+                    <br>
                 </div>
             </div>
         {% endfor %}

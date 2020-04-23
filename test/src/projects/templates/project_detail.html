@@ -2,35 +2,12 @@
 {% load static %}
 
 {% block content %}
-<br>
-<br>
-<br>
-
-<div class="card">
-  <div class="card mb-2">
+<div class="card" style="max-width:1000px">
     <div class="text-center">  
       <h1>{{ project.itemTitle }}</h1>
       </div>
 <body>
-
-
-
-<div id="demo" class="carousel slide" data-ride="carousel">
-
-  <!-- Indicators -->
-  <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-  </ul>
-  
-  <!-- The slideshow -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="{{project.image.url}}" alt="{{project.itemTitle}}" width="1100" height="500">
-    </div>
-  </div>
-  
-
-
+      <img src="{{project.image.url}}" alt="{{project.itemTitle}}" style="max-width:1000px;height:500px">
 <div class="card bg-secondary text-white">
   <div class="card-body">
     <h5>Item:</h5>

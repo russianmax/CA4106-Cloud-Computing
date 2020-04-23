@@ -20,6 +20,6 @@ class Listing_Database(models.Model):
 
 
     def __str__(self):
-        return f'{self.itemTitle} Listing'
+        return f'{self.item_title} Listing'
 
 
