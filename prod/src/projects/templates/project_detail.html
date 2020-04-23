@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="card" style="max-width:1000px">
+    <div class="text-center">  
+      <h1>{{ project.itemTitle }}</h1>
+      </div>
+<body>
+      <img src="{{project.image.url}}" alt="{{project.itemTitle}}" style="max-width:1000px;height:500px">
+<div class="card bg-secondary text-white">
+  <div class="card-body">
+    <h5>Item:</h5>
+  <p>{{ project.item_title }}</p>
+    <h5>Item Description</h5>
+  <p>{{ project.description }}</p>
+  <h5>Price :</h5>
+  <p> €{{ project.price}}</p>
+  <h5>Sellers Location</h5>
+  <p>{{project.county}}</p>
+    <h5>Contact</h5>
+  <p>{{project.phone_number}}</p>
+
+
+
+  </div>
+  </div>
+</div>
+
+</div>
+</body>
+{% endblock content%}
