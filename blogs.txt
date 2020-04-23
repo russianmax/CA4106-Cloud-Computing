@@ -29,8 +29,8 @@ prod once we are happy with how the app works.
 We also decided that we will call our web-app Prestige Worldwide - market place for your needs
 
 06/04/2020
-We decided that Matthew and Maksims will mainly focus on the development of the app (Django). Josh will focus on connecting
-the app to Cloud SQl and Michael will look at the deployment side of things. Tutorial that we are going to follow to develop our
+We decided that Matthew and Maksims will mainly focus on the development of the app (Django). Michael will focus on connecting
+the app to Cloud SQl and Josh will look at the deployment side of things. Tutorial that we are going to follow to develop our
 application can be found here:
 https://www.youtube.com/playlist?list=PL-osiE80TeTtoQCKZ03TU5fNfx2UY6U4p - Django tutorial
 
@@ -42,6 +42,9 @@ As Django uses SQLite3 be default, we will need to change from SQLite 3 to Postg
 
 Michael done some research and found some really good tutorial on how to Connect to Cloud SQL from App Engine in Google Cloud.
 It is a really good tutorial, it shows what we need to do but uses Flask and MySQL instead.
+
+Tutorial on how to connect Connect to Cloud SQL from App Engine in Google Cloud can be found here:
+https://www.reddit.com/r/googlecloud/comments/fzl6ty/connect_to_cloud_sql_from_app_engine_in_google/
 
 08/04/2020
 Maksims have wrote basic functionality of the app. The app at the moment allows users to create profile and sign in. This
@@ -59,16 +62,77 @@ that created a new table in the database called Listing_Database. He then create
 put their desired item into the database. Another simple view was then created called project_index that displayed all of the
 available items on the homepage.
 
+
 20/04/2020
 Upon doing some research in how to deploy our app to App Engine and connect to Cloud SQL. We realised that writing image
-files to App Engine is not allowed. We have to use some sort of cloud storage system for the images. We decided to use Amazon S3
-Cloud Storage Services to achieve this. In order to use Amazon S3 with our Django app we have to also install two new libraries
-- django-storages and boto3.
+files to App Engine is not allowed. We have to use some sort of cloud storage system for the images. Maksims used Amazon S3
+Cloud Storage Services to achieve this. Maksims needed to add in AWS S3 configuration for the bucket that he has created on AWS.
+He also needed to instal two new Python libraries called django-storages and boto3.
 
-The tutorial that we followed can be found here:
+AWS S3 CONFIG:
+AWS_ACCESS_KEY_ID = 'AKIA4KGRGCJCP4HXZ6VF'
+AWS_SECRET_ACCESS_KEY = '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'
+AWS_STORAGE_BUCKET_NAME = 'prestige-worldwide-bucket'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+The tutorial that we followed to store static files on AWS can be found here:
 https://www.youtube.com/watch?v=inQyZ7zFMHM&t=26s - File Storage with AWS S3 Buckets Upload | Django (3.0) Crash Course Tutorials (pt 22)
 
+21/04/2020
+Next, Matthew added in a simple filtering system for our app. This was done by using library called djang-filters. This allows
+users to filter down a queryset(listings) based on models fields. In this case, users can now filter down listings based on
+their location and category. For example - Cars in Dublin.
 
+21/04
+Michael created a Cloud SQL (PostgresSQL) instance. One of the first things that he did was allowed all connections. This
+was achieved by adding in 0.0.0.0/0 in allowed connections field. In order to connect our to PostgreSQL, settings.py DATABASE
+field was changed to the following config:
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'postgres',
+        'USER': 'user',
+        'PASSWORD': 'password',
+    }
+}
+DATABASES['default']['HOST'] = '/cloudsql/ca4106-cloud-computing-272214:europe-west2:rentspot-instance'
+if os.getenv('GAE_INSTANCE'):
+    pass
+else:
+    DATABASES['default']['HOST'] = '35.242.137.69'
 
+Michael then had to run Django migrations in order to create the tables within the Cloud SQL instance.
 
+22/04
+Last but not least, in order to deploy the app Josh had to look into App Engine documentation. He quickly figured out
+that in order to deploy our web app. We need to create main.py file and app.yaml file that will contain information about
+our web app such as runtime and latest version identifier.
+
+Josh also had to add our App Engine instance URL to ALLOWED HOSTS.
+ALLOWED_HOSTS = ['127.0.0.1','prestige-worldwide-dot-ca4106-cloud-computing-272214.nw.r.appspot.com']
+
+We deployed our app succesfully by using the following app.yaml configuration.
+
+# [START django_app]
+runtime: python37
+service: prestige-worldwide
+
+handlers:
+# This configures Google App Engine to serve the files in the app's static
+# directory.
+- url: /static
+  static_dir: static/
+# This handler routes all requests not caught above to your main app. It is
+# required when static routes are defined, but can be omitted (along with
+# the entire handlers section) when there are no static files defined.
+- url: /.*
+  script: auto
+# [END django_app]
+
+23/04
+Lastly, some minor CSS changes and last bit of testing was done today. In order that everything works before recording
+the demo.
