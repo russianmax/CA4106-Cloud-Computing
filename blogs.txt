@@ -1,5 +1,9 @@
-25/03/2020
+SITE URL
 
+https://prestige-worldwide-dot-ca4106-cloud-computing-272214.nw.r.appspot.com/projects/
+
+
+25/03/2020
 Today we started working on Cloud Computing assignment. We started a call on Google Hangouts, as college has been till
 the end of the semester. All of researched different resources on how to 'Create and connect web front end to a Cloud
 SQL database'. The first thing we also did was create a Google Cloud Platform account.
